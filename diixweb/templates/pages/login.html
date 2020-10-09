@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+<header class="fullscreen full-height">
+
+  <video playsinline="playsinline" class="full-width " autoplay="autoplay" muted="muted" loop="loop">
+    <source src="{% static 'videos/video.mp4' %}" type="video/mp4">
+  </video>
+
+  <div class="absolute-center flex flex-center">
+    <h1 class="text-white   q-mb-md text-weight-bolder text-center" style="font-size: 90px;">Ingresa e infórmate
+      de la
+      democracia
+      electoral</h1>
+    <div class="card  text-center" style="background-color: rgba(50,50,50,0.5);max-width:350px">
+      <div class="card-header text-h5 text-orange-9 " style="background-color: rgba(10,10,10,0.9);">
+
+      </div>
+      <div class="card-body">
+
+        <form method="post" action="{% url 'validar' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label class="text-white ">Ingrese su carnet de identidad</label>
+            <input type="text" class="q-pa-md rounded" id="ci" aria-describedby="emailHelp"
+              placeholder="Carnet de Identidad">
+          </div>
+          <div class="form-group">
+            <label class="text-white">Ingrese su celular</label>
+            <input type="text" class="q-pa-md rounded" id="cel" placeholder="Celular 0000000">
+          </div>
+
+          <button type="submit" class="bg-green-5 text-white btn q-mt-lg q-mb-sm glossy ">Ingresar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+
+
+
+
+
+{% endblock %}

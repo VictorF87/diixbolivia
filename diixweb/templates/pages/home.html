@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+{% block contenido %}
+{% load static %}
+<div class="fullscreen bg-dark scroll-y">
+    <div class="flex flex-center  q-pa-xl">
+        <div class="row  justify-center q-pt-sm q-pb-sm q-pl-lg q-pr-lg rounded bg-red-5 text-white qmb-md">
+            <h5 class="text-weight-bolder q-mr-md">NOTA:</h5>
+            <h6 style="font-size: 16px; ">Elija su candidato favorito haciendo click en la imagen solo se puede elejir
+                una vez. Esto ayudara a la
+                red neural para las predicciones de las elecciones</h6>
+        </div>
+        <div class="card-group full-width flex flex-center q-gutter-md q-mt-lg">
+            <div class="row justify-center">
+                {% for candidato in candidatos %}
+                <div class="row q-pa-md">
+                    <div class="card  bg-grey-10">
+
+                        <div class="card-body text-center text-white">
+
+                            <p class="card-text" style="font-size: 20px;">{{candidato.partido}}</p>
+                            <button class="rounded-circle   bg-transparent" style="max-width:160px;border:0px">
+                                <img class="card-img-top " src="{{candidato.foto.url}}" alt="Card image cap"
+                                    style="min-width: 110px;">
+
+                            </button>
+                            <h5 class="text-center card-title text-white  text-weight-bolder" style="font-size: 20px;">
+                                {{candidato.nombre_completo}}</h5>
+                            <div class="{{candidato.color}} q-pa-sm rounded q-mt-md full-width"></div>
+                            <button type="button" class="btn full-width q-btn--unelevated q-ma-sm  text-grey-7 ">
+                                <i class="fas fa-file-download"></i>
+                                Descargar plan de Gobierno
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="full-width q-pa-md text-center">
+            <div class="flex flex-center">
+                <a href="{% url 'info' %}" type="button" class="btn q-ma-sm glossy bg-green-5 text-white "
+                    style="min-width: 150px;"><i class="fas fa-burn"></i>Lo
+                    NUEVO!!</a>
+                <button type="button" class="btn glossy q-ma-sm bg-orange-5 text-white" style="min-width: 150px;"><i
+                        class="fas fa-poll"></i>Predicciones</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

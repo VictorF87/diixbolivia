@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+
+<header class="fullscreen">
+
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+    </video>
+
+    <div class="absolute-center flex flex-center">
+        <h1 class="text-white   q-mb-md text-weight-bolder text-center" style="font-size: 90px;">Ingresa e infórmate
+            de la
+            democracia
+            electoral</h1>
+        <div class="card  text-center" style="background-color: rgba(50,50,50,0.5);max-width:350px">
+            <div class="card-header text-h5 text-orange-9 " style="background-color: rgba(10,10,10,0.9);">
+
+            </div>
+            <div class="card-body">
+
+                <form method="post" action="{% url 'home' %}">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label class="text-white">Ingrese codigo de verificacion</label>
+                        <input type="text" class="q-pa-md rounded" id="code" placeholder="Còdigo">
+                    </div>
+
+                    <button type="submit" class="bg-green-5 text-white btn q-mt-lg q-mb-sm glossy ">Verificar</button>
+                </form>
+                <a href="{% url 'login' %}" class="btn q-btn--unelevated text-white">Atras</a>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+
+
+
+
+{% endblock %}

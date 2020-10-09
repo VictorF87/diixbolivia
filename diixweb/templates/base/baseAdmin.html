@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex,nofollow">
+    <title>diixar-Admin</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'plugins/images/favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css' %}" rel="stylesheet">
+    <!-- toast CSS -->
+    <link href="{% static 'plugins/bower_components/toast-master/css/jquery.toast.css' %}" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="{% static 'plugins/bower_components/morrisjs/morris.css' %}" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="{% static 'plugins/bower_components/chartist-js/dist/chartist.min.css' %}" rel="stylesheet">
+    <link href="{% static 'plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css' %}"
+        rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/line.css' %}">
+    <!-- color CSS -->
+    <link href="{% static 'css/colors/default.css' %}" id="theme" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
+        type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.14.0/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="fix-header bg-dark">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper" class="no-shadow bg-dark">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top no-shadow no-border">
+            <div class="navbar-header no-border bg-dark no-shadow">
+                <div class="top-left-part no-shadow  bg-transparent">
+                    <!-- Logo -->
+                    <a class="logo no-border no-shadow " href="dashboard.html">
+
+                    </a>
+                </div>
+                <!-- /Logo -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg"
+                            href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+                    </li>
+                    <li>
+                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href="">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </form>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="navbar-default bg-grey-10 sidebar no-border no-shadow" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar no-border no-shadow">
+                <div class="sidebar-head bg-dark no-border no-shadow">
+                    <h3><span class="fa-fw  no-shadow"><i class="ti-close ti-menu"></i></span> <span
+                            class="hide-menu text-white ">Lo nuevo!!</span></h3>
+                </div>
+                <ul class="nav no-border no-shadow" id="side-menu">
+                    <li class="bg-transparent text-center" style="padding: 70px 0 0;">
+                        <a href="{% url 'info' %}" class="bg-grey-9 text-white text-h4"><i
+                                class="far fa-chart-bar"></i>GRÁFICAS</a>
+                    </li>
+                    <div class="text-grey-9 text-h4 text-center q-pa-md">Candidatos</div>
+                    <div class=" full-width bg-grey-9 q-pa-sm"></div>
+                    <ul class="list-group">
+                        {% for candidato in candidatos %}
+                        <li class="list-group-item bg-dark full-width d-flex waves-effect  align-items-center">
+                            <div class="text-center">
+                                <img src="{{candidato.foto.url}}" style="max-width:130px"
+                                    class="q-pa-none bg-transparent  rounded-circle" alt="">
+                            </div>
+
+                            <div class="bg-orange-9 q-pa-sm block"></div>
+                            <a href="" class="row q-pl-md text-white">
+                                {{candidato.nombre_completo}}
+
+                            </a>
+                            <p class="text-grey-7">{{candidato.partido}}</p>
+                            <div class="row q-pr-md q-pl-md">
+                                <span class="badge col full-width bg-blue-5  q-ma-none q-pa-sm  ">
+                                    <i class="text-white q-mr-sm fab fa-facebook-square"></i>21212112
+                                </span>
+
+                                <span class="badge col full-width bg-red-5  q-pa-sm ">
+                                    <i class=" text-white q-mr-sm fab fa-instagram"></i>2
+                                </span>
+                            </div>
+                            <div class="row q-pr-md q-pl-md">
+                                <span class="badge col full-width bg-blue-3  q-pa-sm ">
+                                    <i class=" text-white q-mr-sm fab fa-twitter-square"></i>2
+                                </span>
+                                <span class="badge bg-grey-8  col full-width  q-pa-sm ">
+                                    <i class="text-white q-mr-sm fab fa-tiktok"></i>2
+                                </span>
+                            </div>
+
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                    <li class="bg-transparent text-center" style="padding: 70px 0 0;">
+                        <a href="{% url 'timeline' %}" class="bg-grey-9 text-white text-h4"><i
+                                class="fas fa-clock"></i>Linea de Tiempo</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+        <div id="page-wrapper" class="bg-grey-10">
+
+            {% block contenido %}
+
+            {% endblock %}
+
+            <!-- /.container-fluid -->
+            <footer class="footer text-center bg-grey-10"> biidix</footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'plugins/bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="{% static 'plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/2602e8a102.js" crossorigin="anonymous"></script>
+    <!--slimscroll JavaScript -->
+    <script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+    <!--Wave Effects -->
+    <script src="{% static 'js/waves.js' %}"></script>
+    <!--Counter js -->
+    <script src="{% static 'plugins/bower_components/waypoints/lib/jquery.waypoints.js' %}"></script>
+    <script src="{% static 'plugins/bower_components/counterup/jquery.counterup.min.js' %}"></script>
+    <!-- chartist chart -->
+    <script src="{% static 'plugins/bower_components/chartist-js/dist/chartist.min.js' %}"></script>
+    <script
+        src="{% static 'plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js' %}">
+    </script>
+    <!-- Sparkline chart JavaScript -->
+    <script src="{% static 'plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js' %}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/dashboard1.js' %}"></script>
+    <script src="{% static 'plugins/bower_components/toast-master/js/jquery.toast.js' %}"></script>
+</body>
+
+</html>
