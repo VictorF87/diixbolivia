@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 #conexion con la url y obtencion de la informacion de la pagina
-url="https://www.facebook.com/carlosdmesag/posts"
+url="https://www.facebook.com/victorfcovillarrealatila/posts"
 peticion=requests.get(url)
 soup=BeautifulSoup(peticion.content,'lxml')
 
