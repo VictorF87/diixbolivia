@@ -16,7 +16,7 @@
 .main-timeline5 .timeline-icon,
 .main-timeline5 .year {
     margin: auto;
-    position: center;
+    position: relative;
     top: 0;
     left: 0;
     bottom: 0;

@@ -28,49 +28,147 @@
         <div class="col-lg-3 col-sm-5 col-xs-12 ">
             <div class="bg-dark analytics-info q-pa-sm ">
                 <h3 class="box-title text-grey-7">Facebook</h3>
-                <ul class="list-inline two-part">
-                    <li>
-                        <div id="sparklinedash"></div>
-                    </li>
-                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
-                            class="counter text-success">659</span></li>
-                </ul>
+                <canvas id="face" width="400" height="400"></canvas>
+                <script>
+                    var ctx= document.getElementById("face").getContext("2d");
+                    var myChart= new Chart(ctx,{
+                        type:"pie",
+                        data:{
+                            labels:['ADN','CC','CREEMOS','FPV','LIBRE 21','MAS - IPSP','PAN-BOL'],
+                            datasets:[{
+                                    label:'Num datos',
+                                    data:[1718,336475,571926,49545,105981,240235,120],
+                                    backgroundColor:[
+                                        'rgb(246, 19, 19,0.7)',
+                                        'rgb(252, 118, 19,0.7)',
+                                        'rgb(240, 31, 237,0.7)',
+                                        'rgb(13, 111, 34,0.7)',
+                                        'rgb(28, 213, 67,0.7)',
+                                        'rgb(34, 34, 225,0.7)',
+                                        'rgb(225, 34, 75,0.7)'
+                                    ]
+                            }]
+                        },
+                        options:{
+                            scales:{
+                                yAxes:[{
+                                        ticks:{
+                                            beginAtZero:true
+                                        }
+                                }]
+                            }
+                        }
+                    });
+                </script>
             </div>
         </div>
         <div class="col-lg-3 col-sm-5 col-xs-12">
             <div class="bg-dark q-pa-sm analytics-info">
                 <h3 class="box-title text-grey-7">Instagram</h3>
-                <ul class="list-inline two-part">
-                    <li>
-                        <div id="sparklinedash2"></div>
-                    </li>
-                    <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span
-                            class="counter text-purple">869</span></li>
-                </ul>
+                <canvas id="insta" width="400" height="400"></canvas>
+                <script>
+                    var ctx= document.getElementById("insta").getContext("2d");
+                    var myChart= new Chart(ctx,{
+                        type:"pie",
+                        data:{
+                            labels:['ADN','CC','CREEMOS','FPV','LIBRE 21','MAS - IPSP','PAN-BOL'],
+                            datasets:[{
+                                    label:'Num datos',
+                                    data:[0,73900,148000,143,5302,12700,0],
+                                    backgroundColor:[
+                                        'rgb(246, 19, 19,0.7)',
+                                        'rgb(252, 118, 19,0.7)',
+                                        'rgb(240, 31, 237,0.7)',
+                                        'rgb(13, 111, 34,0.7)',
+                                        'rgb(28, 213, 67,0.7)',
+                                        'rgb(34, 34, 225,0.7)',
+                                        'rgb(225, 34, 75,0.7)'
+                                    ]
+                            }]
+                        },
+                        options:{
+                            scales:{
+                                yAxes:[{
+                                        ticks:{
+                                            beginAtZero:true
+                                        }
+                                }]
+                            }
+                        }
+                    });
+                </script>
             </div>
         </div>
         <div class="col-lg-3 col-sm-5 col-xs-12">
             <div class="bg-dark q-pa-sm analytics-info">
                 <h3 class="box-title text-grey-7">Twitter</h3>
-                <ul class="list-inline two-part">
-                    <li>
-                        <div id="sparklinedash3"></div>
-                    </li>
-                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
-                            class="counter text-info">911</span></li>
-                </ul>
+                <canvas id="twitter" width="400" height="400"></canvas>
+                <script>
+                    var ctx= document.getElementById("twitter").getContext("2d");
+                    var myChart= new Chart(ctx,{
+                        type:"pie",
+                        data:{
+                            labels:['ADN','CC','CREEMOS','FPV','LIBRE 21','MAS - IPSP','PAN-BOL'],
+                            datasets:[{
+                                    label:'Num datos',
+                                    data:[261,631000,211000,4368,182000,43600,0],
+                                    backgroundColor:[
+                                        'rgb(246, 19, 19,0.7)',
+                                        'rgb(252, 118, 19,0.7)',
+                                        'rgb(240, 31, 237,0.7)',
+                                        'rgb(13, 111, 34,0.7)',
+                                        'rgb(28, 213, 67,0.7)',
+                                        'rgb(34, 34, 225,0.7)',
+                                        'rgb(225, 34, 75,0.7)'
+                                    ]
+                            }]
+                        },
+                        options:{
+                            scales:{
+                                yAxes:[{
+                                        ticks:{
+                                            beginAtZero:true
+                                        }
+                                }]
+                            }
+                        }
+                    });
+                </script>
             </div>
         </div>
         <div class="col-lg-3 col-sm-5 col-xs-12">
             <div class="bg-dark q-pa-sm analytics-info">
                 <h3 class="box-title text-grey-7">Tik Tok</h3>
-                <ul class="list-inline two-part">
-                    <li>
-                        <div id="sparklinedash3"></div>
-                    </li>
-                    <li class="text-right"><i class="ti-arrow-up text-info"></i> <span
-                            class="counter text-info">911</span></li>
-                </ul>
+                <canvas id="tiktok" width="400" height="400"></canvas>
+                <script>
+                    var ctx= document.getElementById("tiktok").getContext("2d");
+                    var myChart= new Chart(ctx,{
+                        type:"pie",
+                        data:{
+                            labels:['CC','CREEMOS','FPV','MAS - IPSP'],
+                            datasets:[{
+                                    label:'Num datos',
+                                    data:[3537,7860,27800,8155],
+                                    backgroundColor:[
+                                        'rgb(252, 118, 19,0.7)',
+                                        'rgb(240, 31, 237,0.7)',
+                                        'rgb(13, 111, 34,0.7)',
+                                        'rgb(34, 34, 225,0.7)'
+                                        
+                                    ]
+                            }]
+                        },
+                        options:{
+                            scales:{
+                                yAxes:[{
+                                        ticks:{
+                                            beginAtZero:true
+                                        }
+                                }]
+                            }
+                        }
+                    });
+                </script>
             </div>
         </div>
     </div>
@@ -205,4 +303,6 @@
     </div>
 
 </div>
+
 {% endblock %}
+
